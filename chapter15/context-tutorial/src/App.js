@@ -1,14 +1,16 @@
 import './App.css';
 import ColorBox from './component/ColorBox';
-import ColorContext from './contexts/color';
+import { ColorProvider } from './contexts/color';
+import SelectColors from './component/SelectColors';
 
 function App() {
   return (
-    <ColorContext.Provider value={{ color: 'red' }}>
+    <ColorProvider>
       <div>
-        <ColorBox></ColorBox>
+        <SelectColors />
+        <ColorBox />
       </div>
-    </ColorContext.Provider>
+    </ColorProvider>
   );
 }
 
